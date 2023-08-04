@@ -21,25 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qxxlsqlboy.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="欢迎来到我的世界💜">
-<meta property="og:type" content="website">
-<meta property="og:title" content="留胡茬的硬汉">
-<meta property="og:url" content="https://qxxlsqlboy.github.io/index.html">
+    <meta name="description" content="同比和环比计算 同比：通常是指今年第n月与去年第n月比。 常用于分析数据的长期趋势。  环比：通常是指表示连续2个单位周期（比如连续两月）内的量的变化比。   测试数据  12345678910111213141516171819202122232425262728-- 创建表并插入数据CREATE TABLE &#96;saleorder&#96;  (  &#96;order_id&#96; int ,  &#96;order_ti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同比与环比的计算">
+<meta property="og:url" content="https://qxxlsqlboy.github.io/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/index.html">
 <meta property="og:site_name" content="留胡茬的硬汉">
-<meta property="og:description" content="欢迎来到我的世界💜">
+<meta property="og:description" content="同比和环比计算 同比：通常是指今年第n月与去年第n月比。 常用于分析数据的长期趋势。  环比：通常是指表示连续2个单位周期（比如连续两月）内的量的变化比。   测试数据  12345678910111213141516171819202122232425262728-- 创建表并插入数据CREATE TABLE &#96;saleorder&#96;  (  &#96;order_id&#96; int ,  &#96;order_ti">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-03T07:56:06.000Z">
+<meta property="article:modified_time" content="2023-08-04T01:05:09.979Z">
 <meta property="article:author" content="LiuLei">
+<meta property="article:tag" content="Hive SQL">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://qxxlsqlboy.github.io/">
+<link rel="canonical" href="https://qxxlsqlboy.github.io/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://qxxlsqlboy.github.io/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/","path":"2023/08/03/同比与环比的计算/","title":"同比与环比的计算"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>留胡茬的硬汉</title>
+<title>同比与环比的计算 | 留胡茬的硬汉</title>
   
 
 
@@ -74,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">留胡茬的硬汉</h1>
+      <p class="site-title">留胡茬的硬汉</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Code builds world !</p>
@@ -128,7 +131,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -141,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AF%94%E5%92%8C%E7%8E%AF%E6%AF%94%E8%AE%A1%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">同比和环比计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">测试数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%85%AC%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">相关公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E6%AF%94"><span class="nav-number">1.3.</span> <span class="nav-text">环比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AF%94"><span class="nav-number">1.4.</span> <span class="nav-text">同比</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,16 +199,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qxxlsqlboy.github.io/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,13 +223,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 留胡茬的硬汉">
+      <meta itemprop="name" content="同比与环比的计算 | 留胡茬的硬汉">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/" class="post-title-link" itemprop="url">同比与环比的计算</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          同比与环比的计算
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -254,6 +259,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
   
   <span class="post-meta-item">
     
@@ -292,7 +304,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="同比和环比计算"><a href="#同比和环比计算" class="headerlink" title="同比和环比计算"></a>同比和环比计算</h1><blockquote>
+        <h1 id="同比和环比计算"><a href="#同比和环比计算" class="headerlink" title="同比和环比计算"></a>同比和环比计算</h1><blockquote>
 <p>同比：通常是指今年第n月与去年第n月比。 常用于分析数据的长期趋势。 </p>
 <p>环比：通常是指表示连续2个单位周期（比如连续两月）内的量的变化比。</p>
 </blockquote>
@@ -317,7 +329,6 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询中的 t1、t2子查询计算当前月份和前一年同月份的销售数据</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    t1.now_month, <span class="comment">-- 当前月份</span></span><br><span class="line">    NVL(now_num, <span class="number">0</span>) <span class="keyword">AS</span> now_num, <span class="comment">-- 当前月份的销售数量（如果为空则置为0）</span></span><br><span class="line">    NVL(last_num, <span class="number">0</span>) <span class="keyword">AS</span> last_num, <span class="comment">-- 前一年同月份的销售数量（如果为空则置为0）</span></span><br><span class="line">    CONCAT(NVL(ROUND((now_num <span class="operator">-</span> last_num) <span class="operator">/</span> last_num, <span class="number">2</span>), <span class="number">0</span>), <span class="string">&#x27;%&#x27;</span>) <span class="keyword">AS</span> ratio <span class="comment">-- 计算同比增长率（如果为空则置为0）</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(</span><br><span class="line">    <span class="comment">-- 子查询 t1 计算当前月份的销售数据</span></span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        DATE_FORMAT(order_time, <span class="string">&#x27;yyyy-MM&#x27;</span>) <span class="keyword">AS</span> now_month, <span class="comment">-- 提取年份和月份</span></span><br><span class="line">        <span class="built_in">SUM</span>(order_num) <span class="keyword">AS</span> now_num <span class="comment">-- 计算当前月份的总销售数量</span></span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        saleorder</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">        DATE_FORMAT(order_time, <span class="string">&#x27;yyyy-MM&#x27;</span>) <span class="comment">-- 按年份和月份分组</span></span><br><span class="line">) t1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span></span><br><span class="line">(</span><br><span class="line">    <span class="comment">-- 子查询 t2 计算前一年同月份的销售数据</span></span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        DATE_FORMAT(ADD_MONTHS(order_time, <span class="number">12</span>), <span class="string">&#x27;yyyy-MM&#x27;</span>) <span class="keyword">AS</span> now_month, <span class="comment">-- 提取年份和月份（前一年同月份）</span></span><br><span class="line">        <span class="built_in">SUM</span>(order_num) <span class="keyword">AS</span> last_num <span class="comment">-- 计算前一年同月份的总销售数量</span></span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        saleorder</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">        DATE_FORMAT(ADD_MONTHS(order_time, <span class="number">12</span>), <span class="string">&#x27;yyyy-MM&#x27;</span>) <span class="comment">-- 按年份和月份（前一年同月份）分组</span></span><br><span class="line">) <span class="keyword">AS</span> t2 <span class="keyword">ON</span> t1.now_month <span class="operator">=</span> t2.now_month; <span class="comment">-- 使用 LEFT JOIN 将 t1 和 t2 结果按月份连接</span></span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
@@ -326,363 +337,35 @@
 
     <div>
       
-    </div>
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------已经到底啦！<i class="fa fa-paw"></i>-------------</div>
+    
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://qxxlsqlboy.github.io/2023/08/02/Hive-SQL-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Ben.jpg">
-      <meta itemprop="name" content="LiuLei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="留胡茬的硬汉">
-      <meta itemprop="description" content="欢迎来到我的世界💜">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 留胡茬的硬汉">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/02/Hive-SQL-1/" class="post-title-link" itemprop="url">Hive SQL 1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-08-02 10:12:47 / 修改时间：10:28:40" itemprop="dateCreated datePublished" datetime="2023-08-02T10:12:47+08:00">2023-08-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/SQL/" itemprop="url" rel="index"><span itemprop="name">SQL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2023/08/02/Hive-SQL-1/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2023/08/02/Hive-SQL-1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>9</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <img data-src="/2023/08/02/Hive-SQL-1/%E8%87%AA%E5%BE%8B.jpg" class="" title="This is an example image">
-      
-    </div>
-
-    
-    
-    
-
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/Hive-SQL/" rel="tag"># Hive SQL</a>
+          </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://qxxlsqlboy.github.io/2023/08/01/%E8%8A%B1%E5%8D%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Ben.jpg">
-      <meta itemprop="name" content="LiuLei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="留胡茬的硬汉">
-      <meta itemprop="description" content="欢迎来到我的世界💜">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 留胡茬的硬汉">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/01/%E8%8A%B1%E5%8D%89/" class="post-title-link" itemprop="url">以向日葵之名 道最后的告别......</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-01 18:09:31" itemprop="dateCreated datePublished" datetime="2023-08-01T18:09:31+08:00">2023-08-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-04 23:19:25" itemprop="dateModified" datetime="2023-06-04T23:19:25+08:00">2023-06-04</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2023/08/01/%E8%8A%B1%E5%8D%89/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2023/08/01/%E8%8A%B1%E5%8D%89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>928</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="向日葵"><a href="#向日葵" class="headerlink" title="向日葵"></a>向日葵</h1><p><strong>草本植物</strong> / 维基百科，自由的 百科全书</p>
-<p><a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E6%9E%9C%E5%AE%9E">果实</a> <a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E8%8F%8A%E7%A7%91">菊科</a> <a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E8%8A%B1%E5%BA%8F">花序</a></p>
-<p> <strong>向日葵</strong> （<a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E5%AD%A6%E5%90%8D" title="学名">学名</a>：<em>Helianthus annuus</em>）是<a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E8%8F%8A%E7%A7%91" title="菊科">菊科</a><a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E5%90%91%E6%97%A5%E8%91%B5%E5%B1%9E" title="向日葵属">向日葵属</a>的植物。别名 <strong>太阳花</strong> 、 <strong>朝阳花</strong> 、 <strong>日头花</strong> （<a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E5%8F%B0%E6%B9%BE%E8%AF%9D" title="台湾话">台湾话</a>：）<a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E5%90%91%E6%97%A5%E8%91%B5#cite_note-3"></a>，一般称向日葵。因<a target="_blank" rel="noopener" href="https://www.wikiwand.com/zh-hans/%E8%8A%B1%E5%BA%8F" title="花序">花序</a>随太阳转动（太阳花）而得名。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/01/%E8%8A%B1%E5%8D%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
+  <div class="addthis_inline_share_toolbox social-like">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6376f3ce8404e73d" async="async"></script>
+  </div>
 
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://qxxlsqlboy.github.io/2023/08/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Ben.jpg">
-      <meta itemprop="name" content="LiuLei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="留胡茬的硬汉">
-      <meta itemprop="description" content="欢迎来到我的世界💜">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 留胡茬的硬汉">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/01/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-01 18:09:31" itemprop="dateCreated datePublished" datetime="2023-08-01T18:09:31+08:00">2023-08-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-02 09:05:08" itemprop="dateModified" datetime="2023-08-02T09:05:08+08:00">2023-08-02</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2023/08/01/hello-world/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2023/08/01/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>339</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/01/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/02/Hive-SQL-1/" rel="prev" title="Hive SQL 1">
+                  <i class="fa fa-chevron-left"></i> Hive SQL 1
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -691,6 +374,8 @@
 
 
 
+
+    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -783,7 +468,7 @@ setInterval("createtime()",250);
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"blog-waline-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick","mail"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","emoji":["https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","//unpkg.com/@waline/emojis@1.1.0/bilibili","//unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/weibo"],"el":"#waline","comment":true,"path":"/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"blog-waline-comment.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀~","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick","mail"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","emoji":["https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","//unpkg.com/@waline/emojis@1.1.0/bilibili","//unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/weibo"],"el":"#waline","comment":true,"path":"/2023/08/03/%E5%90%8C%E6%AF%94%E4%B8%8E%E7%8E%AF%E6%AF%94%E7%9A%84%E8%AE%A1%E7%AE%97/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
